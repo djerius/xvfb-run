@@ -135,6 +135,7 @@ ARGS=$(getopt --options +ade:f:hn:lp:s:w:t:                             \
               --long help,server-num:,listen-tcp,xauth-protocol:        \
               --long server-args:,wait:,auto-display,debug,version      \
               --long command-timeout:                                   \
+              --long command-kill-after-timeout:                        \
               --long server-timeout:                                    \
               --name "$PROGNAME" -- "$@")
 GETOPT_STATUS=$?
@@ -158,6 +159,7 @@ while :; do
         -p|--xauth-protocol) XAUTHPROTO="$2"; shift ;;
         -s|--server-args) XVFBARGS="$2"; shift ;;
         -t|--command-timeout) COMMAND_TIMEOUT="$2"; shift ;;
+        --command-kill-after-timeout) COMMAND_KILL_AFTER_TIMEOUT="$2"; shift ;;
         --server-timeout) SERVER_TIMEOUT="$2"; shift ;;
         -w|--wait) ;;
         --version) echo $PROGNAME $VERSION; exit 0 ;;
