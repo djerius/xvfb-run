@@ -1,3 +1,11 @@
+0.04 2017-11-08T16:38:29-0500
+
+  [BUG FIXES]
+
+    * when dash is the executing shell, stderr from the auto-display
+      code escaped somehow and was output instead of being redirected.
+      
+
 0.03 2017-11-08T16:16:06-0500
 
   [BUG FIXES]
