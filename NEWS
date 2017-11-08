@@ -1,0 +1,11 @@
+0.01 2017-11-07T17:12:30-0500
+
+    * Start with xfvb-run from Debian Stretch
+    * add --auto-display (concept taken from CentOS7's version)
+      to have Xvfb find the next server number
+    * add --server-timeout to timeout if communication with server
+      in --auto-display mode takes too long
+    * add --command-timeout and --command-kill-after-timeout if
+      command takes too long
+    * add --version
+    
