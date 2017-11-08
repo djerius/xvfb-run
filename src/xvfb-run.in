@@ -39,7 +39,7 @@ XVFBARGS="-screen 0 640x480x8"
 LISTENTCP="-nolisten tcp"
 XAUTHPROTO=.
 SERVER_TIMEOUT=5
-COMMAND_KILL_AFTER_TIMEOUT=5
+COMMAND_KILL_AFTER_TIMEOUT=
 
 # Query the terminal to establish a default number of columns to use for
 # displaying messages to the user.  This is used only as a fallback in the event
@@ -93,7 +93,7 @@ Options:
           --command-kill-after-timeout=TIME
                                     send a SIGKILL to the command if doesn't
                                     exit after being killed for TIME.
-                                    see timeout(1) for units (default: $COMMAND_KILL_AFTER_TIMEOUT)
+                                    see timeout(1) for units
           --version                 output version and exit
 EOF
 }
@@ -300,7 +300,11 @@ COMMAND=$1
 shift;
 
 if [ -n "$COMMAND_TIMEOUT" ]; then
-    COMMAND="timeout --kill-after=$COMMAND_KILL_AFTER_TMEOUT $COMMAND_TIMEOUT $COMMAND"
+    if [ -n "$COMMAND_KILL_AFTER_TIMEOUT" ]; then
+       COMMAND="timeout --kill-after=$COMMAND_KILL_AFTER_TIMEOUT $COMMAND_TIMEOUT $COMMAND"
+    else
+       COMMAND="timeout $COMMAND_TIMEOUT $COMMAND"
+    fi
 fi
 
 # Start the command and save its exit status.
