@@ -26,5 +26,5 @@ test $HAVE_mktemp = no && AC_MSG_ERROR([missing mktemp])
 
 AC_CONFIG_FILES([ Makefile ])
 AC_CONFIG_FILES([src/xvfb-run],[chmod +x src/xvfb-run])
-AC_CONFIG_FILES([man/xvfb-run.l])
+AC_CONFIG_FILES([man/xvfb-run.1])
 AC_OUTPUT

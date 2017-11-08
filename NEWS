@@ -1,4 +1,4 @@
-0.02 2017-11-08T14:57:32-0500
+0.02 2017-11-08T15:02:16-0500
 
   [BUG FIXES]
 
@@ -6,6 +6,7 @@
     * command timeout failed because of incorrect argument sent to timeout
     * --command-kill-after-timeout is now optional if --command-timeout is
       specified.
+    * manual page is back in section 1
 
 0.01 2017-11-07T17:12:30-0500
 

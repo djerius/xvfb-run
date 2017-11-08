@@ -1,1 +1,1 @@
-dist_manl_MANS = %D%/$(PACKAGE).l
+dist_man1_MANS = %D%/$(PACKAGE).1
