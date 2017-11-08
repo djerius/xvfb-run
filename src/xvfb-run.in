@@ -275,7 +275,11 @@ elif [ -n "$AUTO_DISPLAY" ]; then
   # the subshell an process leader in its own process group using setsid.
 
   set +e
-  SERVERNUM=$(exec 3>&1 2>/dev/null setsid sh -c "{ read < $FIFO SERVERNUM ; echo \$SERVERNUM >&3; kill 0; } | { sleep $SERVER_TIMEOUT; kill 0; }")
+  # dash doesn't seem to pay attention to the redirect of fd 2 in the
+  # subshell. redirecting our stderr does the trick.
+  exec 4>&2 2>>"$ERRORFILE"
+  SERVERNUM=$(exec 3>&1 2>>"$ERRORFILE" setsid sh -c "{ read < $FIFO SERVERNUM ; echo \$SERVERNUM >&3; kill 0; } | { sleep $SERVER_TIMEOUT; kill 0; }")
+  exec 2>&4
   set -e
 
   if [ -z "$SERVERNUM" ]; then
