@@ -316,7 +316,7 @@ was written by Branden Robinson and Jeff Licquia with sponsorship from
 Progeny Linux Systems.
 
 This version includes contributions from Diab Jerius (Smithsonian Astrophysical Observatory),
-based in part on concepts from the CentOS 7
+based in part on concepts from the CentOS 7 version in the
 .IR xorg-x11-server-Xvfb-1.19.3-11.el7.x86_64
 package.
 
