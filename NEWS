@@ -1,21 +1,40 @@
+0.03 2017-11-08T16:16:06-0500
+
+  [BUG FIXES]
+
+    * fix a race condition in cleanup when attempting to kill the
+      server
+
+    * add more information to NEWS as to why the CentOS 7 code for
+      --auto-display was not used.
+
 0.02 2017-11-08T15:02:16-0500
 
   [BUG FIXES]
 
     * command line option --command-kill-after-timeout wasn't implemented
+
     * command timeout failed because of incorrect argument sent to timeout
+
     * --command-kill-after-timeout is now optional if --command-timeout is
       specified.
+
     * manual page is back in section 1
 
 0.01 2017-11-07T17:12:30-0500
 
     * Start with xfvb-run from Debian Stretch
-    * add --auto-display (concept taken from CentOS7's version)
-      to have Xvfb find the next server number
+
+    * add --auto-display (concept taken from CentOS7's version) to
+      have Xvfb find the next server number. CentOS7's version didn't
+      work on CentOS7 (same code worked on CentOS6) because of a
+      change in the server or bash or something else...
+
     * add --server-timeout to timeout if communication with server
       in --auto-display mode takes too long
+
     * add --command-timeout and --command-kill-after-timeout if
       command takes too long
+
     * add --version
     
