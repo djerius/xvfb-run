@@ -3,7 +3,7 @@
 AC_PREREQ([2.57])
 
 
-AC_INIT([xvfb-run],[0.02],[opticsoft@head.cfa.harvard.edu],[xvfb-run])
+AC_INIT([xvfb-run],[0.03],[opticsoft@head.cfa.harvard.edu],[xvfb-run])
 AM_INIT_AUTOMAKE( [check-news] )
 AC_CONFIG_SRCDIR([src/xvfb-run.in])
 
