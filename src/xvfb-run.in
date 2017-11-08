@@ -123,9 +123,15 @@ clean_up() {
             exit 5
         fi
     fi
-    if [ -n "$XVFBPID" ]; then
+
+    # just in case the server has gone away, don't complain
+    if [ -n "$XVFBPID" ] ; then
+        set +e
         kill "$XVFBPID" >>"$ERRORFILE" 2>&1
+        set -e
     fi
+
+    return 0
 }
 
 
