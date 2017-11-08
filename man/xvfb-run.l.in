@@ -170,7 +170,7 @@ Exit with error if the server hasn't responded in
 .I timeout
 seconds and the
 .B \-\-auto-display
-option was specified.
+option was specified.  It defaults to 5 seconds.
 .TP
 .BI \-t\ timeout \fR,\fB\-\-command\-timeout= timeout
 Terminate
