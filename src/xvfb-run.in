@@ -321,7 +321,7 @@ fi
 
 # Start the command and save its exit status.
 set +e
-DISPLAY=:$SERVERNUM XAUTHORITY=$AUTHFILE $COMMAND "$@" 2>&1
+DISPLAY=:$SERVERNUM XAUTHORITY=$AUTHFILE $COMMAND "$@"
 RETVAL=$?
 set -e
 
