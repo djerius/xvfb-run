@@ -26,7 +26,7 @@
 # value of the command becomes the return value of this script.
 #
 # If anyone is using this to build a Debian package, make sure the package
-# Build-Depends on xvfb, xbase-clients, and xfonts-base.
+# Build-Depends on xvfb, xauth, and coreutils.
 
 set -e
 
