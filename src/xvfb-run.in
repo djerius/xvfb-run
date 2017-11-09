@@ -123,17 +123,10 @@ clean_up() {
             exit 5
         fi
     fi
-
-    # just in case the server has gone away, don't complain
-    if [ -n "$XVFBPID" ] ; then
-        set +e
+    if [ -n "$XVFBPID" ]; then
         kill "$XVFBPID" >>"$ERRORFILE" 2>&1
-        set -e
     fi
-
-    return 0
 }
-
 
 # Parse the command line.
 ARGS=$(getopt --options +ade:f:hn:lp:s:w:t:                             \
@@ -324,9 +317,6 @@ set +e
 DISPLAY=:$SERVERNUM XAUTHORITY=$AUTHFILE $COMMAND "$@"
 RETVAL=$?
 set -e
-
-# Kill Xvfb now that the command has exited.
-kill $XVFBPID
 
 # Return the executed command's exit status.
 exit $RETVAL
