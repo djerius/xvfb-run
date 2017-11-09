@@ -1,3 +1,10 @@
+0.05 2017-11-09T10:01:25-0500
+
+  [BUG FIXES]
+
+    * track Debian changes (2:1.19.4-1): Do not redirect stderr to
+      stdout when running the program
+
 0.04 2017-11-08T16:38:29-0500
 
   [BUG FIXES]
