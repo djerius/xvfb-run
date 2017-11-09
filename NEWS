@@ -1,3 +1,9 @@
+0.06 2017-11-09T10:28:18-0500
+
+  [BUG FIXES]
+
+    * revert fix for race in clean_up and remove actual race
+
 0.05 2017-11-09T10:01:25-0500
 
   [BUG FIXES]
@@ -17,7 +23,7 @@
 
   [BUG FIXES]
 
-    * fix a race condition in cleanup when attempting to kill the
+    * fix a race condition in clean_up when attempting to kill the
       server
 
     * add more information to NEWS as to why the CentOS 7 code for
